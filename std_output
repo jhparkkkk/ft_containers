@@ -1,5 +1,158 @@
-[43m[1m[30m                           STACK                            [0m
+[1m[33m__________________________________________________________
+
+                    📦 STACK UNIT TEST                   
+__________________________________________________________[0m
+[1m[33m
+🧪 Testing stack<int>.....................................
+[0m
+👀  Capacity______________________________________________
+[1m[35mempty()
+[0mThis container is empty.
+[1m[35msize()
+[0msize is: 0
+
+👀  Elements Access_______________________________________
+[1m[35mtop()
+[0mCannot read top element: Container is empty.
+[1m[35mpush()
+[0mElement no.0 pushed.
+[1m[35mtop()
+[0m10
+
+👀  Modifiers_____________________________________________
+[1m[35mpush()
+[0mElement no.0 pushed.
+Element no.1 pushed.
+Element no.2 pushed.
+Element no.3 pushed.
+Element no.4 pushed.
+Element no.5 pushed.
+Element no.6 pushed.
+Element no.7 pushed.
+Element no.8 pushed.
+Element no.9 pushed.
+[1m[35mempty()
+[0mThis container is not empty.
+[1m[35mtop()
+[0m10
+[1m[35mpop()
+[0mPopping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+[1m[35msize()
+[0msize is: 0
+[1m[35mempty()
+[0mThis container is empty.
+[1m[33m🧪 Testing stack<std::string>.............................
+[0m
+👀  Capacity______________________________________________
+[1m[35mempty()
+[0mThis container is empty.
+[1m[35msize()
+[0msize is: 0
+
+👀  Elements Access_______________________________________
+[1m[35mtop()
+[0mCannot read top element: Container is empty.
+[1m[35mpush()
+[0mElement no.0 pushed.
+[1m[35mtop()
+[0mHello!
+
+👀  Modifiers_____________________________________________
+[1m[35mpush()
+[0mElement no.0 pushed.
+Element no.1 pushed.
+Element no.2 pushed.
+Element no.3 pushed.
+Element no.4 pushed.
+Element no.5 pushed.
+Element no.6 pushed.
+Element no.7 pushed.
+Element no.8 pushed.
+Element no.9 pushed.
+[1m[35mempty()
+[0mThis container is not empty.
+[1m[35mtop()
+[0mHello!
+[1m[35mpop()
+[0mPopping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+[1m[35msize()
+[0msize is: 0
+[1m[35mempty()
+[0mThis container is empty.
+[1m[33m🧪 Testing stack<float>...................................
+[0m
+👀  Capacity______________________________________________
+[1m[35mempty()
+[0mThis container is empty.
+[1m[35msize()
+[0msize is: 0
+
+👀  Elements Access_______________________________________
+[1m[35mtop()
+[0mCannot read top element: Container is empty.
+[1m[35mpush()
+[0mElement no.0 pushed.
+[1m[35mtop()
+[0m3.1415
+
+👀  Modifiers_____________________________________________
+[1m[35mpush()
+[0mElement no.0 pushed.
+Element no.1 pushed.
+Element no.2 pushed.
+Element no.3 pushed.
+Element no.4 pushed.
+Element no.5 pushed.
+Element no.6 pushed.
+Element no.7 pushed.
+Element no.8 pushed.
+Element no.9 pushed.
+[1m[35mempty()
+[0mThis container is not empty.
+[1m[35mtop()
+[0m3.1415
+[1m[35mpop()
+[0mPopping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+Popping element...
+[1m[35msize()
+[0msize is: 0
+[1m[35mempty()
+[0mThis container is empty.
+[1m[33m
+🧪 Testing comparisons operators.......................
+[0mdifferent
+stack_1 is now equal to stack_2.
+stack_1 is bigger than stack_2.
+stack_1 is equal to stack_2.
 0
-10
-hello
-UnitTestStack destructor
+2
+2

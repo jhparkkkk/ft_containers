@@ -6,7 +6,7 @@
 /*   By: jeepark <jeepark@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:18:16 by jeepark           #+#    #+#             */
-/*   Updated: 2023/02/09 14:05:54 by jeepark          ###   ########.fr       */
+/*   Updated: 2023/02/11 13:19:24 by jeepark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,90 @@
 	using namespace std;
 #endif
 
-class UnitTestStack {
+template <class T>
+class UnitTestStack : public stack<T> {
     private:
-        stack<int> arr;
-    public:
-        UnitTestStack();
-        ~UnitTestStack();
+        stack<T> _c;
+    
+    public:    
+        UnitTestStack() : stack<T>() {}
+        ~UnitTestStack() {};
 
-        void    TestPush();
+    /*------------------------------- Capacity -------------------------------*/
+        
+        void    testEmpty() {
+            std::cout << BOLDMAGENTA << "empty()\n" << RESET;
+            if (this->_c.empty())
+                std::cout << "This container is empty.\n";
+            else
+                std::cout << "This container is not empty.\n";
+        }
 
+        void    testSize() {
+            std::cout << BOLDMAGENTA << "size()\n" << RESET;
+            std::cout << "size is: " << this->_c.size() << "\n";
+        }
+    /*-------------------------- Elements Access -----------------------------*/
+        
+        void    testTop() {
+            std::cout << BOLDMAGENTA << "top()\n" << RESET;
+        try {
+            if (this->_c.empty())
+                throw ContainerIsEmpty();
+            else
+                std::cout << this->_c.top() << "\n";
+        }
+        catch(std::exception & e) {
+        std::cout << "Cannot read top element: " << e.what() << "\n";
+        }
+        }
+
+    /*------------------------------- Modifiers -------------------------------*/
+
+        void    testPush(const T& item, const unsigned int count) {
+            std::cout << BOLDMAGENTA << "push()\n" << RESET;
+            for (unsigned int i = 0; i<count; i++)
+            {
+                this->_c.push(item);
+                std::cout << "Element no." << i << " pushed.\n";
+            }
+        }
+        
+        void    testPop() {
+            std::cout << BOLDMAGENTA << "pop()\n" << RESET;
+                while (!this->_c.empty()) {
+                    this->_c.pop();
+                    std::cout << "Popping element...\n";
+                }
+        }
+
+        stack<T>    getContainer() const { return _c; }
+        
+    /*------------------------------ Exceptions ------------------------------*/
+        class   ContainerIsEmpty : public std::exception {
+            public:
+                virtual const char* what() const throw() {
+                    return "Container is empty."; }
+        };
+
+        void    unitTestMemberFunctions(const T& item) {
+            std::cout << "\n👀  Capacity______________________________________________\n";
+            testEmpty();
+            testSize();
+            std::cout << "\n👀  Elements Access_______________________________________\n";
+            testTop();
+            testPush(item, 1);
+            testTop();
+            std::cout << "\n👀  Modifiers_____________________________________________\n";
+            testPush(item, 10);
+            testEmpty();
+            testTop();
+            testPop();
+            testSize();
+            testEmpty();
+            
+        }
 };
 
-// void    UnitTestStack();
+void    unitTestStack();
+void    unitTestComparisonOverload();

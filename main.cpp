@@ -6,7 +6,7 @@
 /*   By: jeepark <jeepark@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:16:07 by jeepark           #+#    #+#             */
-/*   Updated: 2023/02/09 15:23:26 by jeepark          ###   ########.fr       */
+/*   Updated: 2023/02/10 16:38:32 by jeepark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 /* utils */
 #include <iostream>
+#include <chrono>
 
 /* Unit Test for each container */
 #include "./tests/UnitTestStack.hpp"
@@ -35,7 +36,6 @@
 
 int main()
 {
-    UnitTestStack test;
-    std::cout << "hello\n";
+    unitTestStack();
 
 }

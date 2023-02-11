@@ -20,11 +20,10 @@ printy "Checking diff between ft_output and std_output"
 ./ft_containers > ft_output
 ./std_containers > std_output
 diff ft_output std_output > diff
-# rm -rf ft std
 if ! diff -q ft_output std_output &>/dev/null; then
-  >&2 printr "\nError: ft_output and std_output are different"
+  >&2 printr "\n ❌ Fail: ft_output and std_output are different"
         cat diff
   else
-    printg "\nOK!"
+    printg "\n✅ Success: My ft containers behave just like std!"
 fi
 

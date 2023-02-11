@@ -2,7 +2,7 @@ FT_NAME = ft_containers
 
 STD_NAME = std_containers
 
-CC = clang++
+CC = c++
 
 CLFAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -33,6 +33,6 @@ test:
 	@rm -rf std_output | true
 	@rm -rf ft_output | true
 	@rm -rf diff | true
-	@./test.sh
+	@./testOutputs.sh
 
 .PHONY:	all clean fclean re test 

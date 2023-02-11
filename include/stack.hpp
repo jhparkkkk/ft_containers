@@ -6,7 +6,7 @@
 /*   By: jeepark <jeepark@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 14:19:04 by jeepark           #+#    #+#             */
-/*   Updated: 2023/02/09 15:14:26 by jeepark          ###   ########.fr       */
+/*   Updated: 2023/02/11 13:30:26 by jeepark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,21 @@ class stack {
         Container c;
 
     public:
-        /*
-            Constructor
-        */
-        explicit stack(const Container& = Container()): c() {};
 
-        /*
-            Capacity 
-        */
+        /* Constructor */
+        explicit stack(const Container& to_copy = Container()): c(to_copy) {};
 
+        /*------------------------------- Capacity -------------------------------*/
         bool empty() const {
             return c.empty();
         }
         
         size_type size() const {
-            std::cout << "size is : ";
             return c.size();
         }
         
-        /*
-            Elements acces
-        */        
-        
+        /*-------------------------- Elements Access -----------------------------*/
+     
         value_type& top() {
             return c.back();
         }
@@ -56,33 +49,54 @@ class stack {
             return c.back();
         }
         
-        /*
-            Modifiers
-        */
+        /*------------------------------- Modifiers -------------------------------*/
+
         void push(const value_type& x) {
+            // std::cout << "ft push\n";
             c.push_back(x);
         }
         
         void pop() {
             c.pop_back();
         }
+        
+        /*-------------------------- Relational Operators -------------------------*/
+        template <class U, class C>
+            friend bool operator==(const stack<U,C>& x, const stack<U,C>& y);
+        template <class U, class C>
+            friend bool operator< (const stack<U,C>& x, const stack<U,C>& y);
+        template <class U, class C>
+            friend bool operator!=(const stack<U,C>& x, const stack<U,C>& y);
+        template <class U, class C>
+            friend bool operator> (const stack<U,C>& x, const stack<U,C>& y);
+        template <class U, class C>
+            friend bool operator<=(const stack<U,C>& x, const stack<U,C>& y);
+        template <class U, class C>
+            friend bool operator>=(const stack<U,C>& x, const stack<U,C>& y);
+
     };
 
-    // template <class T, class Container>
-    //     bool operator==(const stack<T, Container>& x, const stack<T, Container>& y);
+    template <class U, class C>
+            bool operator==(const stack<U,C>& x, const stack<U,C>& y) {
+                return x.c == y.c; }
+
+    template <class U, class C>
+            bool operator< (const stack<U,C>& x, const stack<U,C>& y) {
+                return x.c < y.c; }
     
-    // template <class T, class Container>
-    //     bool operator< (const stack<T, Container>& x, const stack<T, Container>& y);
+    template <class U, class C>
+            bool operator!=(const stack<U,C>& x, const stack<U,C>& y) {
+                return x.c != y.c; }
 
-    // template <class T, class Container>
-    //     bool operator!=(const stack<T, Container>& x, const stack<T, Container>& y);
+    template <class U, class C>
+            bool operator> (const stack<U,C>& x, const stack<U,C>& y) {
+                return x.c > y.c; }
 
-    // template <class T, class Container>
-    //     bool operator> (const stack<T, Container>& x, const stack<T, Container>& y);
+    template <class U, class C>
+            bool operator<=(const stack<U,C>& x, const stack<U,C>& y) {
+                return x.c <= y.c; }
 
-    // template <class T, class Container>
-    //     bool operator>=(const stack<T, Container>& x, const stack<T, Container>& y);
-
-    // template <class T, class Container>
-    //     bool operator<=(const stack<T, Container>& x, const stack<T, Container>& y);
+    template <class U, class C>
+            bool operator>=(const stack<U,C>& x, const stack<U,C>& y) {
+                return x.c >= y.c; }
 }
