@@ -6,7 +6,7 @@
 /*   By: jeepark <jeepark@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:18:16 by jeepark           #+#    #+#             */
-/*   Updated: 2023/02/11 13:19:24 by jeepark          ###   ########.fr       */
+/*   Updated: 2023/02/11 13:55:14 by jeepark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 #define DEFAULT     "\033[49m"
 #pragma once
 /* ft_containers headers */
-#include "./../include/stack.hpp"
+#include "./../../include/stack.hpp"
 
 /* std_containers headers */
 #include <vector>
@@ -134,4 +134,5 @@ class UnitTestStack : public stack<T> {
 };
 
 void    unitTestStack();
-void    unitTestComparisonOverload();
+void    testStackConstructors();
+void    testStackOperators();

@@ -2,6 +2,8 @@ FT_NAME = ft_containers
 
 STD_NAME = std_containers
 
+BENCHMARK = time
+
 CC = c++
 
 CLFAGS = -Wall -Wextra -Werror -std=c++98
@@ -9,18 +11,29 @@ CLFAGS = -Wall -Wextra -Werror -std=c++98
 INC = -I include
 
 SRC =	main.cpp \
+
+TIME_SRC =	${addprefix tests/, \
+			benchmark.cpp\
+			} \ 
 		
-TEST =	${addprefix tests/, \
+TEST =	${addprefix tests/stack/, \
 		UnitTestStack.cpp \
+		testStackConstructors.cpp \
+		testStackOperators.cpp \
 		} \
 
 all: $(STD_NAME) $(FT_NAME)
+
+time:
+	c++ -o benchmark ./tests/benchmark.cpp
+	./benchmark
 
 $(STD_NAME): $(SRC) $(TEST)
 	$(CC) $(CLFAGS) $(INC) -o $(STD_NAME) $(SRC) $(TEST)
 
 $(FT_NAME): $(SRC) $(TEST)
 	$(CC) -DFT $(CLFAGS) $(INC) -o $(FT_NAME) $(SRC) $(TEST)
+
 
 clean:
 	rm -rf *.o $(FT_NAME) $(STD_NAME) diff std_output ft_output
@@ -33,6 +46,6 @@ test:
 	@rm -rf std_output | true
 	@rm -rf ft_output | true
 	@rm -rf diff | true
-	@./testOutputs.sh
+	@./testOuputs.sh
 
 .PHONY:	all clean fclean re test 

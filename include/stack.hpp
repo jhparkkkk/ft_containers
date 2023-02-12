@@ -6,7 +6,7 @@
 /*   By: jeepark <jeepark@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 14:19:04 by jeepark           #+#    #+#             */
-/*   Updated: 2023/02/11 13:30:26 by jeepark          ###   ########.fr       */
+/*   Updated: 2023/02/12 16:25:55 by jeepark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 #include <vector>
 
 namespace ft {
-    template <class T, class Container = std::vector<T> >
+    template <class T, class CONTAINER = std::vector<T> >
 class stack {
     public:
-        typedef typename Container::value_type value_type;
-        typedef typename Container::size_type size_type;
-        typedef Container container_type;
+        typedef typename CONTAINER::value_type value_type;
+        typedef typename CONTAINER::size_type size_type;
+        typedef CONTAINER container_type;
 
     protected:
-        Container c;
+        CONTAINER c;
 
     public:
 
         /* Constructor */
-        explicit stack(const Container& to_copy = Container()): c(to_copy) {};
+        explicit stack(const CONTAINER& to_copy = CONTAINER()): c(to_copy) {};
 
         /*------------------------------- Capacity -------------------------------*/
         bool empty() const {
