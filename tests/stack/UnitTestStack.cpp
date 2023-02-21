@@ -6,17 +6,17 @@
 /*   By: jeepark <jeepark@student42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 09:15:48 by jeepark           #+#    #+#             */
-/*   Updated: 2023/02/11 14:46:50 by jeepark          ###   ########.fr       */
+/*   Updated: 2023/02/16 14:49:11 by jeepark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "UnitTestStack.hpp"
+#include "./../include/UnitTestStack.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <time.h>
 void    unitTestStack() {
 
-    float startTime = (float)clock()/CLOCKS_PER_SEC;
+    // float startTime = (float)clock()/CLOCKS_PER_SEC;
 
     std::cout << BOLDYELLOW;
     std::cout << "__________________________________________________________\n";
@@ -44,8 +44,8 @@ void    unitTestStack() {
 
     /* Do work */
 
-    float endTime = (float)clock()/CLOCKS_PER_SEC;
+    // float endTime = (float)clock()/CLOCKS_PER_SEC;
 
-    float timeElapsed = endTime - startTime;
-    std::cout << timeElapsed << std::endl;
+    // float timeElapsed = endTime - startTime;
+    // std::cout << timeElapsed << std::endl;
 }

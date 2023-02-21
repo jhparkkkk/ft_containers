@@ -22,7 +22,12 @@
 #include <chrono>
 
 /* Unit Test for each container */
-#include "./tests/stack/UnitTestStack.hpp"
+#include "./tests/include/UnitTestStack.hpp"
+#include "./tests/include/UnitTestVector.hpp"
+
+
+/* Test meta functions */
+#include "./tests/include/meta_function.hpp"
 
 /*  to compile two binaries : one with my own containers and one from STL
     in order to compare outputs
@@ -34,8 +39,17 @@
 	using namespace std;
 #endif
 
+#define NDEBUG
+#include <cassert>
+
 int main()
 {
-    unitTestStack();
+    // unitTestStack();
+	// test_iterator_traits();
+	// test_reverse_iterator();
+	// test_type_traits();
+	// test_algorithm();
+	// test_utility();
+	unitTestVector();
 
 }
