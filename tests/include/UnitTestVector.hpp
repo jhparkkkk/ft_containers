@@ -11,12 +11,16 @@
 /* ************************************************************************** */
 
 #pragma once
+
+#define RESET   "\033[0m"
+#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
 /* ft_containers headers */
 #include "./../../include/vector.hpp"
 
 /* std_containers headers */
 #include <vector>
 #include <stack>
+#include <type_traits>
 
 /* utils */
 #include <iostream>
@@ -30,3 +34,17 @@
 
 void    unitTestVector();
 void    testVectorConstructors();
+void    testVectorModifiers();
+void    testVectorCapacity();
+
+/*
+----------------------------------- NOTES --------------------------------------
+>>> Testing a container via a templated test class takes too long.
+----------------------------------- ISSUES ------------------------------------
+>>> Ctor and Dtor called twice when initiating UniTestVector class
+	>>> Remove private member container : 
+		private:
+			vector<T> _c;
+		> But why is this working with stack ? 
+
+*/

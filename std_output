@@ -1,0 +1,91 @@
+[1m[34m__________________________________________________________
+
+                   📦 VECTOR UNIT TEST                   
+__________________________________________________________[0m
+[1m[34m
+🧪 Testing vector Constructors.............................
+[0mtest vector constructors
+[1m[34mdefault constructor
+[0msize is: 0
+[1m[34mfill constructor
+[0mfill_ctor front: 10
+fill_ctor back: 10
+[1m[34mcopy constructor
+[0mcopy_ctor front: 10
+copy_ctor back: 10
+[1m[34mrange constructor
+[0mrange_ctor front: 20
+range_ctor back: 20
+range_arr_ctor front: 16
+range_arr_ctor back: 29
+[1m[34moperator=
+[0m[1m[34m
+🧪 Testing vector Modifiers................................
+[0mfirst value: 10
+last value: 100
+last value: 90
+last value: 90
+size: 9
+last value: 80
+size: 8
+last value: 70
+size: 7
+last value: 60
+size: 6
+last value: 50
+size: 5
+last value: 40
+size: 4
+last value: 30
+size: 3
+last value: 20
+size: 2
+last value: 10
+size: 1
+container is empty.
+[1m[34m
+🧪 Testing vector Capacity.................................
+[0mtest vector capacity
+[1m[34mmax_size()
+[0mmax_size(): 4611686018427387903
+max_size(): 4611686018427387903
+max_size(): 2305843009213693951
+max_size(): 4611686018427387903
+max_size(): 768614336404564650
+[1m[34msize()
+[0msize: 1
+size: 2
+size: 3
+size: 4
+size: 5
+size: 6
+size: 7
+size: 8
+size: 9
+size: 10
+size: 9
+size: 8
+size: 7
+size: 6
+size: 5
+size: 4
+size: 3
+size: 2
+size: 1
+[1m[34mcapacity()
+[0mcapacity: 2
+capacity: 4
+capacity: 4
+capacity: 8
+[1m[34mreserve()
+[0mmaking foo grow:
+capacity changed: 1//1
+capacity changed: 2//2
+capacity changed: 4//4
+capacity changed: 8//8
+capacity changed: 16//16
+capacity changed: 32//32
+capacity changed: 64//64
+capacity changed: 128//128
+making bar grow:
+capacity changed: 100//100

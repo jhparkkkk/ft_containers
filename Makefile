@@ -6,7 +6,8 @@ BENCHMARK = time
 
 CC = c++
 
-CLFAGS = -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CLFAGS = -Wall -Wextra -Werror -std=c++98
+#-g3 -fsanitize=address
 
 
 INC = -I include
@@ -17,23 +18,24 @@ TIME_SRC =	${addprefix tests/, \
 			benchmark.cpp\
 			} \ 
 		
-TEST =	${addprefix tests/, \
-		iterator_traits.cpp \
-		reverse_iterator.cpp \
-		type_traits.cpp \
-		algorithm.cpp \
-		utility.cpp \
-		}\
-		${addprefix tests/stack/, \
-		UnitTestStack.cpp \
-		testStackConstructors.cpp \
-		testStackOperators.cpp \
-		} \
-		${addprefix tests/vector/, \
+TEST =	${addprefix tests/vector/, \
 		UnitTestVector.cpp \
 		testVectorConstructors.cpp \
+		testVectorModifiers.cpp \
+		testVectorCapacity.cpp \
 		} \
-
+# ${addprefix tests/, \
+# 		iterator_traits.cpp \
+# 		reverse_iterator.cpp \
+# 		type_traits.cpp \
+# 		algorithm.cpp \
+# 		utility.cpp \
+# 		}\
+# 		${addprefix tests/stack/, \
+# 		UnitTestStack.cpp \
+# 		testStackConstructors.cpp \
+# 		testStackOperators.cpp \
+# 		} \
 
 all: $(STD_NAME) $(FT_NAME)
 

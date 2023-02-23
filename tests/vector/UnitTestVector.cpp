@@ -25,6 +25,26 @@ void    unitTestVector() {
     std::cout << "__________________________________________________________";
     std::cout << RESET << "\n";
     
-    std::cout << BOLDBLUE << "\n🧪 Testing vector constructor..............................\n" << RESET;   
+    // float startTime = (float)clock()/CLOCKS_PER_SEC;
+
+    std::cout << BOLDBLUE << "\n🧪 Testing vector Constructors.............................\n" << RESET;   
     testVectorConstructors();
+    std::cout << BOLDBLUE << "\n🧪 Testing vector Modifiers................................\n" << RESET;   
+    testVectorModifiers();
+    std::cout << BOLDBLUE << "\n🧪 Testing vector Capacity.................................\n" << RESET;   
+    testVectorCapacity();
+    // float endTime = (float)clock()/CLOCKS_PER_SEC;
+    // float timeElapsed = endTime - startTime;
+    // std::cout << timeElapsed << std::endl;
+    
+
+    // std::cout << BOLDYELLOW << "🧪 Testing stack<std::string>.............................\n" << RESET;
+    // UnitTestStack<std::string> stackString;
+    // stackString.unitTestMemberFunctions("Hello!");
+    // std::cout << BOLDYELLOW << "🧪 Testing stack<float>...................................\n" << RESET;
+    // UnitTestStack<float> stackFloat;
+    // stackFloat.unitTestMemberFunctions(3.1415);
+
+    // std::cout << BOLDYELLOW << "\n🧪 Testing comparisons operators.......................\n" << RESET;
+    // testStackOperators();
 }

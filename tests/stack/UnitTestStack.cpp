@@ -13,10 +13,10 @@
 #include "./../include/UnitTestStack.hpp"
 #include <iostream>
 #include <stdio.h>
-#include <time.h>
+
+
 void    unitTestStack() {
 
-    // float startTime = (float)clock()/CLOCKS_PER_SEC;
 
     std::cout << BOLDYELLOW;
     std::cout << "__________________________________________________________\n";
@@ -39,13 +39,21 @@ void    unitTestStack() {
 
     std::cout << BOLDYELLOW << "\n🧪 Testing comparisons operators.......................\n" << RESET;
     testStackOperators();
-
-    // float startTime = (float)clock()/CLOCKS_PER_SEC;
-
-    /* Do work */
-
-    // float endTime = (float)clock()/CLOCKS_PER_SEC;
-
-    // float timeElapsed = endTime - startTime;
-    // std::cout << timeElapsed << std::endl;
 }
+
+/*
+----------------------------------- NOTES --------------------------------------
+>>> Chrono :
+    #include <time.h>
+    float startTime = (float)clock()/CLOCKS_PER_SEC;
+    
+    * Do work *
+
+    float endTime = (float)clock()/CLOCKS_PER_SEC;
+
+    float timeElapsed = endTime - startTime;
+    std::cout << timeElapsed << std::endl;
+
+----------------------------------- ISSUES ------------------------------------
+
+*/
