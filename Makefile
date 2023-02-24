@@ -23,6 +23,8 @@ TEST =	${addprefix tests/vector/, \
 		testVectorConstructors.cpp \
 		testVectorModifiers.cpp \
 		testVectorCapacity.cpp \
+		testVectorElementAccess.cpp \
+		testVectorOperators.cpp \
 		} \
 # ${addprefix tests/, \
 # 		iterator_traits.cpp \

@@ -24,6 +24,7 @@
 
 /* utils */
 #include <iostream>
+#include <cassert>
 
 #ifdef FT
 	using namespace ft;
@@ -36,7 +37,9 @@ void    unitTestVector();
 void    testVectorConstructors();
 void    testVectorModifiers();
 void    testVectorCapacity();
-
+void	testVectorElementAccess();
+void	testVectorOperators();
+void	testVectorIterator();
 /*
 ----------------------------------- NOTES --------------------------------------
 >>> Testing a container via a templated test class takes too long.

@@ -41,6 +41,7 @@
 
 /* utils */
 #include <iostream>
+#include <assert> 
 
 #ifdef FT
 	using namespace ft;

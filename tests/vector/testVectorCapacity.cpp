@@ -1,9 +1,4 @@
-#define RESET   "\033[0m"
-#define BOLDBLUE    "\033[1m\033[34m"  
-
 #include "./../include/UnitTestVector.hpp"
-#include <cassert>
-#include <iostream>
 
 static void    test_max_size()
 {

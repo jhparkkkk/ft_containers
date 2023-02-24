@@ -10,13 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#define RESET   "\033[0m"
-#define BOLDBLUE    "\033[1m\033[34m"      /* Bold Blue */
-
 #include "./../include/UnitTestVector.hpp"
-#include <iostream>
-#include <stdio.h>
-#include <time.h>
 
 void    unitTestVector() {
     std::cout << BOLDBLUE;
@@ -27,12 +21,16 @@ void    unitTestVector() {
     
     // float startTime = (float)clock()/CLOCKS_PER_SEC;
 
-    std::cout << BOLDBLUE << "\n🧪 Testing vector Constructors.............................\n" << RESET;   
+    std::cout << BOLDBLUE << "\n🧪 Testing Vector Constructors.............................\n" << RESET;   
     testVectorConstructors();
-    std::cout << BOLDBLUE << "\n🧪 Testing vector Modifiers................................\n" << RESET;   
+    std::cout << BOLDBLUE << "\n🧪 Testing Vector Modifiers................................\n" << RESET;   
     testVectorModifiers();
-    std::cout << BOLDBLUE << "\n🧪 Testing vector Capacity.................................\n" << RESET;   
+    std::cout << BOLDBLUE << "\n🧪 Testing Vector Capacity.................................\n" << RESET;   
     testVectorCapacity();
+    std::cout << BOLDBLUE << "\n🧪 Testing Vector Element Access...........................\n" << RESET;   
+    testVectorElementAccess();
+    std::cout << BOLDBLUE << "\n🧪 Testing Vector Relational Operators.....................\n" << RESET;   
+    testVectorOperators();
     // float endTime = (float)clock()/CLOCKS_PER_SEC;
     // float timeElapsed = endTime - startTime;
     // std::cout << timeElapsed << std::endl;

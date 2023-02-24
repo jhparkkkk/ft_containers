@@ -11,8 +11,33 @@
 /* ************************************************************************** */
 
 #include "./../include/UnitTestVector.hpp"
-#include <cassert>
-#include <iostream>
+
+static void test_get_allocator()
+{
+    vector<int> test;
+    int* arr;
+
+    arr = test.get_allocator().allocate(5);
+    for (size_t i=0; i<5; i++) test.get_allocator().construct(&arr[i],i);
+
+    std::cout << "The allocated array contains:";
+    for (size_t i=0; i<5; i++) std::cout << ' ' << arr[i];
+    std::cout << '\n';
+
+    for (size_t i=0; i<5; i++) test.get_allocator().destroy(&arr[i]);
+    test.get_allocator().deallocate(arr,5);
+}
+
+static void test_operator()
+{
+    vector<int> one(1, 10);
+    vector<int> two(1, 42);
+    assert(one.front()==10);    
+    one = two;
+    assert(one.front()==42);
+    vector<int> three = one;
+    assert(three.front()==42);
+}
 
 void    testVectorConstructors() {
     std::cout << "test vector constructors\n";
@@ -47,13 +72,11 @@ void    testVectorConstructors() {
     std::cout << "range_arr_ctor back: " << range_arr_ctor.back() << "\n";
 
     std::cout << BOLDBLUE << "operator=\n" << RESET;
-    vector<int> one(1, 10);
-    vector<int> two(1, 42);
-    assert(one.front()==10);    
-    one = two;
-    assert(one.front()==42);
-    vector<int> three = one;
-    assert(three.front()==42);
+    test_operator();
+
+    std::cout << BOLDBLUE << "get_allocator()\n" << RESET;
+    test_get_allocator();
+
 
 
 }

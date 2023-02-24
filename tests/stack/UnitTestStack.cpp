@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "./../include/UnitTestStack.hpp"
-#include <iostream>
-#include <stdio.h>
 
 
 void    unitTestStack() {

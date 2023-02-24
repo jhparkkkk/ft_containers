@@ -84,11 +84,7 @@ namespace ft {
     {
         size_t i = 0;
         while (first != last)
-        {
-            _c[i] = *first;
-            ++first;
-            ++i;
-        }
+            _c[i++] = *first++;
     }
     
     vector(const vector<T,Allocator>& x) :
@@ -126,7 +122,8 @@ namespace ft {
     
     // void assign(size_type n, const T& u);
     
-    // allocator_type get_allocator() const;
+    allocator_type get_allocator() const
+        { return allocator_type(_alloc); }
     
     // // iterators:
     // iterator begin();
@@ -138,7 +135,8 @@ namespace ft {
     // reverse_iterator rend();
     // const_reverse_iterator rend() const;
     
-    // // capacity:
+    /*------------------------------- Capacity -------------------------------*/
+
     size_type size() const
         { return _size; }
 
@@ -146,11 +144,15 @@ namespace ft {
     size_type max_size() const {
        return _alloc.max_size();
     }
+    
     // void resize(size_type sz, T c = T());
+    
     size_type capacity() const
         { return _capacity; }
+    
     bool empty() const
         { return _size == 0; }
+    
     void reserve(size_type n) 
     {
         if (n > _capacity)
@@ -159,22 +161,43 @@ namespace ft {
             _c = _alloc.allocate(_capacity);
         }
     }
+
+    /*-------------------------- Elements Access -----------------------------*/
     
-    // // element access:
-    // reference operator[](size_type n);
-    // const_reference operator[](size_type n) const;
-    // const_reference at(size_type n) const;
-    // reference at(size_type n);
+    reference operator[](size_type n)
+        { return *(_begin + n); }
+    
+    const_reference operator[](size_type n) const
+        { return *(_begin + n); }
+    
+    const_reference at(size_type n) const
+    {
+        if (n >= _size)
+            throw std::out_of_range ("at");
+        return _begin[n];
+    }
+    
+    reference at(size_type n)
+    {
+        if (n >= _size)
+            throw std::out_of_range ("at");
+        return _begin[n];
+    }
+    
     reference front()
         { return *_begin; }
+    
     const_reference front() const
         { return *_begin; }
+    
     reference back()
         { return *(_end - 1); }
+    
     const_reference back() const
         { return *(_end - 1); }
     
-    // // 23.2.4.3 modifiers:
+    /*------------------------------- Modifiers -------------------------------*/
+
     void push_back(const T& x) {
         // if container is full then allocate a new container
         if (_size >= _capacity) {
@@ -214,10 +237,11 @@ namespace ft {
         }
         _alloc.deallocate(_c, _capacity);
     }
-    
-    // template <class T, class Allocator>
-    // bool operator==(const vector<T,Allocator>& x,
-    // const vector<T,Allocator>& y);
+
+    /*-------------------------- Relational Operators -------------------------*/
+
+    template <class U, class A>
+        friend bool operator==(const vector<U,A>& x, const vector<U,A>& y);
     // template <class T, class Allocator>
     // bool operator< (const vector<T,Allocator>& x,
     // const vector<T,Allocator>& y);
@@ -234,9 +258,12 @@ namespace ft {
     // bool operator<=(const vector<T,Allocator>& x,
     // const vector<T,Allocator>& y);
     
+    /*-------------------------- Specialized algorithms -------------------------*/
+
     // // specialized algorithms:
     // template <class T, class Allocator>
     // void swap(vector<T,Allocator>& x, vector<T,Allocator>& y);
+
     private:
     void    update_m_v(const T& value) {
         _size++;
@@ -246,6 +273,14 @@ namespace ft {
     }
 
     };
+    /*-------------------------- Non Member Overloads -------------------------*/
+    // template <class U, class A>
+    //     bool operator==(const vector<U,A>& x, const vector<U,A>& y) { 
+    //         std::cout << "hello\n";
+    //         return x.size() == y.size() && equal(x.begin(), x.end, y.begin()); }
+    
+    // { return (__x.size() == __y.size()
+	    //   && std::equal(__x.begin(), __x.end(), __y.begin())); }
 }
 
 /*

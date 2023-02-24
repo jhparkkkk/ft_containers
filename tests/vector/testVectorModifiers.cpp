@@ -1,7 +1,4 @@
 #include "./../include/UnitTestVector.hpp"
-#include <cassert>
-#include <iostream>
-
 
 void    testVectorModifiers() {
     

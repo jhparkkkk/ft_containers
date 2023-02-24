@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "./../include/UnitTestStack.hpp"
-#include <iostream>
 
 void    testStackOperators() {
     UnitTestStack<int> stack_1;
