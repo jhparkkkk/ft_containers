@@ -16,7 +16,7 @@
 #include "iterator_traits.hpp"
 #include "enable_if.hpp"
 #include "is_integral.hpp"
-
+#include "iterator.hpp"
 // #include <iterator>
 
 namespace ft {
@@ -37,6 +37,7 @@ namespace ft {
         typedef size_t                              size_type;
         // typedef implementation defined iterator; // See 23.1
         // typedef implementation defined const_iterator; // See 23.1
+        typedef randomAccessIterator<pointer> iterator;
         // typedef reverse_iterator<iterator> reverse_iterator;
         // typedef reverse_iterator<const_iterator> const_reverse_iterator;
     private:

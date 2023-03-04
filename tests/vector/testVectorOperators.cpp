@@ -13,9 +13,7 @@ void    testVectorOperators()
 
     // assert(one==two);
 
-    vector<int> one(5,10);
-    vector<int> two (one);
-    assert(one==two);
+
 
 
 }

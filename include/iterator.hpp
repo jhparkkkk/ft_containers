@@ -37,6 +37,6 @@ namespace ft {
         randomAccessIterator(const randomAccessIterator& o) : current(o.current) {}
 
 
-    } 
+    }; 
 }
     
